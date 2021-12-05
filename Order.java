@@ -13,13 +13,12 @@ class Order implements Item
     }
 
 
-    void generateOrderCheckOut(String cardNumber)
+    void generateOrderCheckOut()
     {
         try
         {   
             FileWriter cart = new FileWriter("cart.csv");
             float total=0;
-            cart.write(cardNumber+"\n");
             for(Item p:components)
             {
                 cart.write(p.getItemName()+","+p.getItemPrice()+"\n");
@@ -48,6 +47,21 @@ class Order implements Item
         components.add(i);
     }
   
+    void renderCard(HashSet<String> cardNumbers, String address)
+    {
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader(address));    
+            br.readLine();
+            String line="";
+            while ((line = br.readLine()) != null) cardNumbers.add(line);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+           
+    }
 
     void printInvalidEntries(HashMap<String,Float> invalid)
     {
@@ -65,19 +79,33 @@ class Order implements Item
     }
 
 
-    String getInput(HashMap<String,HashMap<String,HashMap<String,Float>>> inventory,HashMap<String,Float> invalid,String address)
+    void getInput(HashMap<String,HashMap<String,HashMap<String,Float>>> inventory,HashMap<String,Float> invalid,String address,HashSet<String> cardNumbers,String cardAddress)
     {
-        String line = "",cardNumber=""; 
+        String line = "";
         try
         {
             BufferedReader br = new BufferedReader(new FileReader(address));    
-            cardNumber = br.readLine();
+            br.readLine();
             while ((line = br.readLine()) != null) 
             {  
                 String[] inp = line.split(",");
                 String item = inp[0];
                 float quantity = Float.parseFloat(inp[1]);
-                cardNumber = inp[2];
+                if(!cardNumbers.contains(inp[2]))
+                {
+                    cardNumbers.add(inp[2]);
+                    try
+                    {
+                        FileWriter file = new FileWriter(cardAddress,true);
+                        file.write("\n"+inp[2]);
+                        file.close();
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e);
+                    }
+
+                } 
                 float available_quantity=-1.0f,price=0f;
                 for(String s:inventory.keySet() )
                 {
@@ -102,7 +130,7 @@ class Order implements Item
         {
             System.out.println(e);
         }
-        return cardNumber;
+        
     }
 
     float getCap(String item)
