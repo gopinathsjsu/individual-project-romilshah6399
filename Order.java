@@ -89,10 +89,8 @@ class Order implements Item
                          invalid.put(item,quantity);
                         else 
                         {
-                            
                             Product p = new Product(item);
                             p.price=quantity*price;
-                            // System.out.print(p.description+"--"+p.price);
                             this.addItem(p);
                         }
                         break;

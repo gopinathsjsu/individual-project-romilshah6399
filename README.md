@@ -1,2 +1,3 @@
-<!-- Store enter the address of the files in proper methods inside the main class -->
-<!-- Used Composite Desgin pattern for the code -->#individual-project-romilshah6399
+Store enter the address of the files in proper methods inside the main class 
+Used Composite Desgin pattern for the code
+Just pass the address of inventory and input files in the function called and the output file will be generated in the same file location by running the mainClass.java file
