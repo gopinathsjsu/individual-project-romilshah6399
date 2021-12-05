@@ -19,7 +19,7 @@ class mainClass
         HashMap<String,HashMap<String,HashMap<String,Float>>> inventory = new HashMap<>();
         HashMap<String,Float> invalid=new HashMap<>();
         order.getInventory(inventory,"Dataset - Sheet1.csv");
-        String cardNumber = order.getInput(inventory,invalid,"Input3 - Sheet1.csv");
+        String cardNumber = order.getInput(inventory,invalid,"Input2 - Sheet1.csv");
         if(invalid.size()!=0) order.printInvalidEntries(invalid);
         else order.generateOrderCheckOut(cardNumber);
         
