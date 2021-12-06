@@ -23,3 +23,7 @@ Results for input 2:
 
 Results for input 3:
 ![alt text](Input3_results.jpg)
+
+
+Class Diagram:
+![alt text](class-diagram.jpg)
