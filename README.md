@@ -2,6 +2,7 @@ Store the inventory , input and cardnumber.csv in same file of this project and 
 Used Composite Desgin pattern for the code
 
 Cards csv input 1
+![alt text](cards_csv_for_input_1.png)
 <img
 src=“cards_csv_for_input_1.png”
 raw=true
