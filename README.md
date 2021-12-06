@@ -19,7 +19,7 @@ Results for input 1:
 ![alt text](Input1_results.jpg)
 
 Results for input 2:
-![alt text](Input3_results.jpg)
+![alt text](Input2_results.jpg)
 
 Results for input 3:
 ![alt text](Input3_results.jpg)
