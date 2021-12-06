@@ -1,5 +1,6 @@
-Store the inventory , input and cardnumber.csv in same file of this project and enter the address int calling methods in the mainClass.java file
-Used Composite Desgin pattern for the code
+->Store the inventory , input and cardnumber.csv in same file of this project and enter the address int calling methods in the mainClass.java file
+
+->Used Composite Desgin pattern for the code
 
 Cards csv input 1:
 
