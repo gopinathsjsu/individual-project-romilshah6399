@@ -26,4 +26,4 @@ Results for input 3:
 
 
 Class Diagram:
-![alt text](class-diagram.jpg)
+![alt text](class-diagram.jpeg)
